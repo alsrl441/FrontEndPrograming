@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <title>DIT Kiosk</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="../jquery-3.7.1.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body id="body">
+        <header>
+            <h2 id="title">[<img src="DITLogo.png" id="DITLogo">동의과학대학교 학생식당]</h2>
+        </header>
+        <main>
+            <div id="menuList">
+                <nav>
+                    <div class="menuType" id="ramyeon">
+                        <div>라면</div>
+                    </div>
+                    <div class="menuType" id="deopbap">
+                        <div>덮밥</div>
+                    </div>
+                    <div class="menuType" id="porkCutlet">
+                        <div>돈까스</div>
+                    </div>
+                    <div class="menuType" id="stew">    
+                        <div>찌개</div>
+                    </div>
+                </nav>
+                <div id="menuBox">
+                    <div class="menu" id="normalRamyeon"><div class="menuName">라면</div><img src="라면.png" class="menuImage"><div class="price">₩2,500</div></div>
+                    <div class="menu" id="cheeseRamyeon"><div class="menuName">치즈라면+밥</div><img src="치즈라면+밥.png" class="menuImage"><div class="price">₩3,500</div></div>
+                    <div class="menu" id="dumplingRamyeon"><div class="menuName">만두라면+밥</div><img src="만두라면+밥.png" class="menuImage"><div class="price">₩3,500</div></div>
+                    <div class="menu" id="jaeyookDeopbap"><div class="menuName">제육덮밥</div><img src="제육덮밥.png" class="menuImage"><div class="price">₩4,500</div></div>
+                    <div class="menu" id="spamDeopbap"><div class="menuName">스팸마요덮밥</div><img src="스팸마요덮밥.png" class="menuImage"><div class="price">₩4,500</div></div>
+                    <div class="menu" id="chickenDeopbap"><div class="menuName">치킨톡톡덮밥</div><img src="치킨톡톡덮밥.png" class="menuImage"><div class="price">₩4,500</div></div>
+                    <div class="menu" id="normalPorkCutlet"><div class="menuName">돈까스</div><img src="돈까스.png" class="menuImage"><div class="price">₩4,500</div></div>
+                    <div class="menu" id="noodleAndPorkCutlet"><div class="menuName">쟁반비빔국수+돈까스</div><img src="쟁반비빔국수+돈까스.png" class="menuImage"><div class="price">₩5,500</div></div>
+                    <div class="menu" id="jaeyookAndPorkCutlet"><div class="menuName">제돈세트</div><img src="제돈세트.png" class="menuImage"><div class="price">₩6,000</div></div>
+                    <div class="menu" id="kimchijjigae"><div class="menuName">돈김치찌개+달걀후라이</div><img src="돈김치찌개+달걀후라이.png" class="menuImage"><div class="price">₩5,500</div></div>
+                </div>
+            </div>
+            <div id="orderList">
+                <div id="orderHistory">주문 내역</div>
+                <div id="orderBox">
+                    <div class="orderedMenu" id="menu1"></div>
+                    <div class="orderedMenu" id="menu2"></div>
+                    <div class="orderedMenu" id="menu3"></div>
+                    <div class="orderedMenu" id="menu4"></div>
+                    <div class="orderedMenu" id="menu5"></div>
+                    <div class="orderedMenu" id="menu6"></div>
+                    <div class="orderedMenu" id="menu7"></div>
+                    <div class="orderedMenu" id="menu8"></div>
+                    <div class="orderedMenu" id="menu9"></div>
+                    <div class="orderedMenu" id="menu10"></div>
+                </div>
+                <div class="box">
+                    <div id="sum">
+                        합계: 
+                    </div>
+                    <div id="sumPrice">
+                        ₩ 0
+                    </div>
+                    <div style="text-align: center;">
+                        <div id="pay">결제</div>
+                        <div id="cancel">취소</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div id="printArea">
+            <div class="receipt" id="payBox">
+                <main>
+                    <div id="receipt">
+                        <div id="closeBox">
+                            <button id="close">[X]</button>
+                        </div>
+                        <h3>[영수증]</h3>
+                        <div class="line">--------------------------------------------------------------------------------</div>
+                        <div class="head">동의과학대학교 학생식당</div>
+                        <div class="head" id="date">
+                            <script>
+                                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                                document.getElementById("date").innerHTML = new Date().toLocaleDateString('ko-KR', options);
+                            </script>
+                        </div>
+                        <div class="line">--------------------------------------------------------------------------------</div>
+                        <div style="text-align: left; padding-left: 70px; padding-right: 70px;" id="infoBox">
+                            <div id="n">메뉴 이름</div>
+                            <div id="p">가격</div>
+                            <div id="a">수량</div>
+                            <div id="s">금액</div>
+                        </div>
+                        <div class="line">--------------------------------------------------------------------------------</div>
+                        <div id="orderedMenuList">
+                        </div>
+                        <div class="line">--------------------------------------------------------------------------------</div>
+                        <div id="total">
+                        </div>
+                        <div class="line">--------------------------------------------------------------------------------</div>
+                        <button id="print">인쇄</button>
+                        <div class="line" id="lastLine">--------------------------------------------------------------------------------</div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+    </html> 
